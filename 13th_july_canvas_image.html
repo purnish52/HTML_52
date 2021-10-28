@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas style="border:thin solid blue;" id="canvas1" width="400" height="500"></canvas>
+    <script>
+        var ct=document.getElementById("canvas1");
+        var r=ct.getContext("2d"); // to create an object getContext() is used 
+        //var image=document.getElementById("img1");
+        var img= new Image();
+        img.src='/machhu pichu.jpg';
+        img.onload=function()//onload event is triggered as web page loads
+        {
+          var r1=img.width/img.height;//ratio of image
+          var w1=ct.width;
+          var h1=w1/r1;//image height 
+          if(h1>(ct.height))// if canvas height if 
+          {
+              h1=ct.height;
+              w1=h1*r1;// to adjust width according to new image height 
+          }
+          else if (h1<ct.height)
+          {
+              h1=ct.height;
+          }
+          if(w1<(img.width))//if the image width is double than screen width
+          {
+              img.width=w1;
+              w1=ct.width;
+          }
+          r.drawImage(img,0,0,w1,h1);
+        }
+    </script>
+</body>
+</html>

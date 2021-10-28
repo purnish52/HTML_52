@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas style="border:thin solid blue;" id="canvas1" width="400" height="500"></canvas>
+    <script>
+    var ct=document.getElementById("canvas1");
+    var r=ct.getContext("2d"); // to create an object getContext() is used 
+    r.beginPath();
+    r.font="40px Verdana";// to give size and font name
+    r.fillText("TEXT IN CANVAS",50,80)
+    //to add text on any shape
+    r.strokeText("STROKE TEXT",20,120)
+    r.fillStyle="yellow";
+    r.rect(90,160,250,250);
+    r.fillRect(90,160,250,250);
+    r.stroke();
+    r.font="20px Lucida";//to give size and font name
+        r.fillStyle="blue";
+        r.fillText("TEXT IN RECTANGLE",100,220);   
+        r.stroke();
+        r.font="20px Lucida";//to give size and font name
+        r.fillStyle="blue";
+        r.fillText("TEXT IN RECTANGLE",100,220);   
+    </script>
+</body>
+</html>

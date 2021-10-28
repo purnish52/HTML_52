@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas style="border:thin solid blue;" id="canvas1" width="400" height="500"></canvas>
+    <script>
+    var ct=document.getElementById("canvas1");
+    var r=ct.getContext("2d"); // to create an object getContext() is used 
+    r.beginPath();
+    r.rect(20,20,200,200);
+    r.stroke();
+    var lg=r.createRadialGradient(80,60,15,75,125,180);//80 is x-starting point of gradient,60 is y point of gradient ,15 is radius of circle ,75 is x ending coord of circle,125 is y ending coord of circle and 180 is radius of ending circle
+    lg.addColorStop(0,"yellow");
+    lg.addColorStop(1,"red");
+    r.fillStyle=lg;
+    r.fillRect(20,20,200,200);
+    r.stroke();
+    </script>
+
+</body>
+</html>
